@@ -8,11 +8,6 @@ Desenvolvedor Flutter e Dart com foco em performance e experiência do usuário,
 - **Ferramentas:** Docker, Git, REST APIs
 - **Metodologias:** Metodologias ágeis (Scrum), Clean Code, SOLID
 
-## Estatísticas
-![Jefferson's GitHub stats](https://github-readme-stats.vercel.app/api?username=jefferson-developer&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jefferson-developer&layout=compact&theme=radical)
-
 ## Contato
 - **LinkedIn:** [Jefferson Oliveira](https://www.linkedin.com/in/jefferson-oliveira-780a191b6/)
 - **E-mail:** jpo.developer@gmail.com
-- **Telefone:** (83) 9 9941-5280
