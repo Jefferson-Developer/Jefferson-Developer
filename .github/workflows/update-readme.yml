@@ -1,8 +1,8 @@
-name: Update README with Stats
+name: Update README with GitHub Stats
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Atualiza a cada hora
+    - cron: '0 0 * * *' # Atualiza diariamente
   workflow_dispatch:
 
 jobs:
@@ -12,11 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Generate GitHub Stats
+      - name: Update README with GitHub Stats
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          curl -o README.md https://github-readme-stats.vercel.app/api?username=jefferson-developer&show_icons=true&theme=radical&count_private=true&include_all_commits=true
+          curl -o stats.svg "https://github-readme-stats.vercel.app/api?username=jefferson-developer&show_icons=true&theme=radical&count_private=true&include_all_commits=true&token=${{ secrets.GH_TOKEN }}"
+          curl -o langs.svg "https://github-readme-stats.vercel.app/api/top-langs/?username=jefferson-developer&layout=compact&theme=radical&token=${{ secrets.GH_TOKEN }}"
+          sed -i 's|<img src="stats.svg"|![Jefferson\'s GitHub stats](stats.svg)|' README.md
+          sed -i 's|<img src="langs.svg"|![Top Languages](langs.svg)|' README.md
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add README.md
